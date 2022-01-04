@@ -1,0 +1,29 @@
+type Query {
+  taskMainList: [Task]!
+  countTasks: Long!
+}
+
+type Task @key(fields: "id") {
+  id: ID!
+  content: String
+  tags: String
+  approachCount: Int
+  createdAt: String
+  author: User!
+  approachList: [Approach!]!
+}
+
+type User @key(fields: "id") {
+    id: ID!
+    userName: String
+    firstName: String!
+    lastName: String!
+}
+
+type Approach @key(fields: "id") {
+    id: ID!
+    content: String!
+    voteCount: Int!
+    createdDate: String!
+    author: User!
+}
